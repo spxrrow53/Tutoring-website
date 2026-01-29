@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tutoring Center</title>
+    <link rel="stylesheet" href="style1.css" />
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>Expert Tutoring Center</h1>
+        <nav>
+          <a href="#home">Home</a>
+          <a href="#subjects">Subjects</a>
+          <a href="#schedule">Schedule</a>
+          <a href="#contact">Contact</a>
+          <a href="https://www.google.com" target="_blank">Google</a>
+        </nav>
+      </header>
+
+      <div class="container" id="home">
+        <div class="card">
+          <h2>Learn Better with Us</h2>
+          <p class="fontf">Professional Tutoring for Maths, ICT and English.</p>
+          <a href="form.html" target="_blank">
+            <button onclick="register_msg()" class="animate1">
+              Register Now
+            </button>
+          </a>
+
+          <p id="message"></p>
+        </div>
+      </div>
+      <div class="animate"></div>
+
+      <div class="card subjects" id="subjects">
+        <img src="pexels-1.jpg" />
+        <img src="pexels-2 .jpg" />
+        <img src="pexels-3.jpg" />
+        <img src="pexels-4.jpg" />
+        <img src="pexels-7.jpg" />
+        <img src="pexels-5.jpg" />
+        <img src="pexels-6.jpg" />
+        <img src="pexels-8.jpg" />
+      </div>
+
+      <div class="card">
+        <h3>Why Choose Us?</h3>
+        <ul class="stylei">
+          <li>Simplify Concepts</li>
+          <li>Modern Teaching Methods</li>
+          <li>Affordable Prices</li>
+          <li>Flexible Schedule</li>
+        </ul>
+      </div>
+
+      <div class="card table-box" id="schedule">
+        <h3>Class Schedule</h3>
+        <table>
+          <tr>
+            <th>Subject</th>
+            <th>Day</th>
+            <th>Time</th>
+          </tr>
+          <tr class="fontf">
+            <td>Maths</td>
+            <td>Monday</td>
+            <td>4 PM</td>
+          </tr>
+          <tr class="fontf">
+            <td>ICT</td>
+            <td>Wednesday</td>
+            <td>5 PM</td>
+          </tr>
+          <tr class="fontf">
+            <td>English</td>
+            <td>Friday</td>
+            <td>3 PM</td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="card" id="contact">
+        <h3>Contact Us</h3>
+        <form onsubmit="sendForm(event)">
+          <input type="text" id="name" placeholder="Your Name" required />
+          <input type="email" id="email" placeholder="Your Email" required />
+          <textarea id="msg" placeholder="Your Opinion" rows="4"></textarea>
+          <button class="button" type="submit">Send</button>
+          <p id="formMsg"></p>
+        </form>
+      </div>
+    </main>
+
+    <footer>
+      <p>© 2026 Expert Tutoring Center</p>
+    </footer>
+
+    <script src="script1.js"></script>
+  </body>
+</html>

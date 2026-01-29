@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      * {
+        font-family:
+          "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+      }
+      .stylei {
+        border-radius: 6px;
+      }
+      body {
+        background: linear-gradient(to left, #8e0e00, #1f1c18);
+      }
+      .container {
+        justify-content: center;
+        background: linear-gradient(to left, #ff512f, #dd2476);
+        width: 300px;
+        height: 270px;
+        margin: auto;
+        margin-top: 0px;
+        padding: 50px;
+        padding-top: 5px;
+        border-radius: 10px;
+        box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
+      }
+      a {
+        text-decoration: none;
+        margin: auto;
+        color: aliceblue;
+        width: 100%;
+        text-align: center;
+        font-weight: 600;
+        display: block;
+        margin-bottom: 10px;
+      }
+      a:hover {
+        color: #ca3a71;
+      }
+
+      h1 {
+        text-align: center;
+        margin-top: 0%;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+      label {
+        display: inline-block;
+        width: 70px;
+        height: 30px;
+        font-weight: 600;
+      }
+      .savebtn {
+        margin-left: 10px;
+        display: inline-block;
+        width: 280px;
+        padding: 5px;
+        margin-top: 30px;
+        background-color: transparent;
+        cursor: pointer;
+        border-radius: 8px;
+        font-weight: bolder;
+        font-size: 18px;
+      }
+      .savebtn:hover {
+        background-color: #8e0e00;
+        color: rgb(255, 255, 255);
+      }
+      th,
+      td {
+        border: 2px solid #d6d5d5;
+        padding: 6px;
+        text-align: center;
+        color: aliceblue;
+      }
+      table {
+        margin: 20px auto;
+        border-collapse: collapse;
+        width: 90%;
+      }
+
+      .deletebtn {
+        background-color: rgb(119, 20, 20);
+        border-radius: 7px;
+        border: none;
+        border-bottom: solid black;
+        color: whitesmoke;
+      }
+
+      .deletebtn:hover {
+        background-color: rgba(219, 48, 114, 0.582);
+      }
+    </style>
+    <title>Register Form</title>
+  </head>
+  <body>
+    <a href="index1.html">Home </a>
+    <div class="container">
+      <h1>STUDENT FORM</h1>
+
+      <label>Name</label>
+      <input type="text" id="name" class="stylei" required autofocus /><br />
+      <label>Age</label>
+      <input type="number" id="age" class="stylei" required /> <br />
+      <label>Gender</label>
+      <input type="radio" name="Gender" value="male" /><span
+        style="
+          font-family:
+            &quot;Gill Sans&quot;, &quot;Gill Sans MT&quot;, Calibri,
+            &quot;Trebuchet MS&quot;, sans-serif; font-weight: 600;
+        "
+        >Male</span
+      >
+      <input type="radio" name="Gender" value="female" /><span
+        style="
+          font-family:
+            &quot;Gill Sans&quot;, &quot;Gill Sans MT&quot;, Calibri,
+            &quot;Trebuchet MS&quot;, sans-serif; font-weight: 600;
+        "
+        >Female</span
+      ><br />
+
+      <label>Subject</label>
+      <select
+        id="Course"
+        class="stylei"
+        style="
+          font-family:
+            &quot;Gill Sans&quot;, &quot;Gill Sans MT&quot;, Calibri,
+            &quot;Trebuchet MS&quot;, sans-serif; font-weight: 600;
+        "
+      >
+        <option>Maths</option>
+        <option>I.C.T</option>
+        <option>English</option></select
+      ><br />
+      <label>E-mail</label>
+      <input type="email" id="email" class="stylei" required /> <br />
+      <button class="savebtn" onclick="save_content()">save</button>
+    </div>
+
+    <div>
+      <table>
+        <thead>
+          <tr>
+            <th>NAME</th>
+            <th>AGE</th>
+            <th>GENDER</th>
+            <th>COURSE</th>
+            <th>EMAIL</th>
+            <th>ACTION</th>
+          </tr>
+        </thead>
+        <tbody id="table_body"></tbody>
+      </table>
+    </div>
+
+    <script>
+      var table_body = document.getElementById("table_body");
+
+      function save_content() {
+        var name = document.getElementById("name");
+        var age = document.getElementById("age");
+        var course = document.getElementById("Course");
+        var email = document.getElementById("email");
+        var gender = document.querySelector('input[name="Gender"]:checked');
+
+        if (!name || !age || !gender || !email) {
+          alert("Fields are can't be Empty");
+          return;
+        }
+        var table_r = document.createElement("tr");
+
+        var td_name = document.createElement("td");
+        td_name.textContent = name.value;
+
+        var td_age = document.createElement("td");
+        td_age.textContent = age.value;
+
+        var td_gender = document.createElement("td");
+        td_gender.textContent = gender.value;
+
+        var td_course = document.createElement("td");
+        td_course.textContent = course.value;
+
+        var td_email = document.createElement("td");
+        td_email.textContent = email.value;
+
+        var td_action = document.createElement("td");
+        td_action.innerHTML = "<button class='deletebtn'>Delete</button>";
+
+        td_action.addEventListener("click", function (event) {
+          event.target.closest("tr").remove();
+        });
+
+        td_action.setAttribute("class", "delete-btn");
+
+        table_r.append(
+          td_name,
+          td_age,
+          td_gender,
+          td_course,
+          td_email,
+          td_action,
+        );
+        table_body.append(table_r);
+      }
+    </script>
+  </body>
+</html>

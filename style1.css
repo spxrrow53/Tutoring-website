@@ -1,0 +1,169 @@
+html,
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: linear-gradient(120deg, #1a2980, #26d0ce);
+  padding-top: 40px;
+
+  width: 100%;
+  margin: 0;
+}
+
+header {
+  background: linear-gradient(to right, #030303, #000c40);
+  color: white;
+  padding-bottom: 15px;
+  padding-top: 0%;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+.fontf {
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-weight: 600;
+}
+.stylei {
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-weight: 600;
+  color: #c1d5dd;
+}
+nav a {
+  color: #38bdf8;
+  margin: 0 20px;
+  text-decoration: none;
+  font-weight: 600;
+}
+nav a:hover {
+  color: white;
+  text-decoration: underline;
+  text-decoration-color: #c1d5dd;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 6px;
+}
+.container {
+  padding: 30px;
+  padding-bottom: 0px;
+  text-align: center;
+}
+.animate1 {
+  background-color: #0f3586;
+  border-radius: 8px;
+  margin-top: 10px;
+  color: #ccc;
+  padding: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  border: none;
+}
+.animate1:hover {
+  background-color: #071d4d;
+}
+.card {
+  background: linear-gradient(to right, #00416a, #e4e5e6);
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 15px 20px 25px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
+  max-width: 900px;
+}
+.subjects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+}
+.subjects img {
+  width: 100%;
+  object-fit: cover;
+  cursor: pointer;
+  border-radius: 15px;
+  transition: transform 0.5s ease;
+  transform-origin: top right;
+  will-change: transform;
+}
+.subjects img:hover {
+  transform: rotateX(5deg) rotateY(5deg) scale(1.05);
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+}
+.table-box table {
+  width: 100%;
+  border-collapse: collapse;
+}
+th,
+td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+}
+th {
+  background: #111827;
+  color: white;
+  text-align: left;
+}
+.animate {
+  width: 10px;
+  height: 10px;
+  background: #062038;
+  border-radius: 50%;
+  margin: 10px auto;
+  animation: slide 2s infinite linear;
+  will-change: transform;
+}
+@keyframes slide {
+  0%,
+  100% {
+    transform: translateX(99px);
+  }
+  50% {
+    transform: translateX(-99px);
+  }
+}
+.button {
+  padding: 12px 25px;
+  background: #111827;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+}
+.button:hover {
+  background: #071d4d;
+}
+
+h3 {
+  margin: 3px;
+  margin-bottom: 10px;
+}
+h1 {
+  margin: 7px;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+input,
+textarea {
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+footer {
+  background: #111827;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  width: 100%;
+  left: 0;
+  right: 0;
+}
+ul li {
+  padding: 8px;
+}
+@media (max-width: 600px) {
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
