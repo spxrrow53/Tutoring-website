@@ -3,9 +3,11 @@ body {
   font-family: "Segoe UI", Arial, sans-serif;
   background: linear-gradient(120deg, #1a2980, #26d0ce);
   padding-top: 40px;
-
   width: 100%;
   margin: 0;
+  min-height:100vh;
+  
+  
 }
 
 header {
@@ -43,8 +45,7 @@ nav a:hover {
   text-underline-offset: 6px;
 }
 .container {
-  padding: 30px;
-  padding-bottom: 0px;
+  padding-top: 10px;
   text-align: center;
 }
 .animate1 {
@@ -64,9 +65,13 @@ nav a:hover {
   background: linear-gradient(to right, #00416a, #e4e5e6);
   padding: 20px;
   border-radius: 20px;
-  box-shadow: 15px 20px 25px rgba(0, 0, 0, 0.1);
-  margin: 20px auto;
+  box-shadow: 15px 20px 15px rgba(0, 0, 0, 0.1);
+  margin: 30px auto ;
   max-width: 900px;
+  
+  
+  
+  
 }
 .subjects {
   display: grid;
@@ -119,7 +124,9 @@ th {
   }
 }
 .button {
-  padding: 12px 25px;
+  margin-top: 20px;
+  margin-bottom: 0;
+  padding: 15px 25px;
   background: #111827;
   color: white;
   border: none;
@@ -140,13 +147,19 @@ h1 {
 form {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 20px;
+  position: relative;
 }
-input,
-textarea {
-  padding: 12px;
+input,textarea {
+  padding: 15px;
   border-radius: 10px;
   border: 1px solid #ccc;
+
+  
+}
+textarea{
+  min-height: 67px;
+  max-width: 867px;
 }
 footer {
   background: #111827;
@@ -154,16 +167,18 @@ footer {
   text-align: center;
   padding: 15px;
   width: 100%;
-  left: 0;
-  right: 0;
+  
 }
 ul li {
   padding: 8px;
 }
-@media (max-width: 600px) {
+@media (max-width: 900px) {
   nav {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
   }
+  .card{
+     width:85%;
+   }
 }
